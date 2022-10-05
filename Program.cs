@@ -3,12 +3,14 @@
 
 [3 7 22 2 78] -> 76
 */
+
 int [] getRandomArray (int length, int startPoint, int endPoint)
 {
     int [] resultArray = new int [length];
     for (int i = 0; i < length; i ++)
     {
         resultArray [i] = new Random().Next(startPoint, endPoint + 1);
+
     }
     return resultArray;
 }
@@ -27,7 +29,6 @@ void printArray (int [] incommingArray)
 }
 int getMaxNumbersInArray (int [] incommingArray)
 {
-    int result = 0;
     int max = incommingArray[0];
     for (int i = 0; i < incommingArray.Length; i++)
     {
@@ -36,11 +37,10 @@ int getMaxNumbersInArray (int [] incommingArray)
             max = incommingArray [i];
         }
     }
-    return result;
+    return max;
 }
 int getMinNumbersInArray (int [] incommingArray)
 {
-    int result = 0;
     int min = incommingArray[0];
     for (int i = 0; i < incommingArray.Length; i++)
     {
@@ -49,10 +49,10 @@ int getMinNumbersInArray (int [] incommingArray)
             min = incommingArray [i];
         }
     }
-    return result;
+    return min;
 }
 int [] currentArray = getRandomArray(12,-5,5);
 printArray (currentArray);
-int MaxNumber = getMaxNumbersInArray (currentArray);
+int maxNumber = getMaxNumbersInArray (currentArray);
 int minNumber = getMinNumbersInArray (currentArray);
-Console.WriteLine($"разница между максимальным и минимальным значением в массиве равна {MaxNumber - minNumber}");
+Console.WriteLine($"разница между максимальным и минимальным значением в массиве равна {maxNumber - minNumber}");
